@@ -1,0 +1,91 @@
+[gd_scene load_steps=3 format=3 uid="uid://cu68i1er1spd2"]
+
+[ext_resource type="Script" uid="uid://ce7bsvk3hhgqw" path="res://Scenes/main_menu.gd" id="1_kkkmn"]
+[ext_resource type="Texture2D" uid="uid://df2js2awo07dv" path="res://assets/main bg.png" id="2_48xlc"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kkkmn")
+metadata/_edit_vertical_guides_ = [960.0]
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_48xlc")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="GameMenuButtons" type="Control" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayButton" type="Button" parent="GameMenuButtons"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -239.0
+offset_top = 213.0
+offset_right = 243.0
+offset_bottom = 358.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+tooltip_text = "Play New Game"
+theme_override_colors/font_hover_color = Color(0.164706, 0.827451, 0.505882, 1)
+theme_override_font_sizes/font_size = 40
+
+[node name="QuitButton" type="Button" parent="GameMenuButtons"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = 447.0
+offset_right = 77.0
+offset_bottom = 510.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+tooltip_text = "Quit Entire Game"
+theme_override_colors/font_hover_color = Color(0.164706, 0.827451, 0.505882, 1)
+theme_override_font_sizes/font_size = 40
+text = "Quit
+"
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 879.0
+offset_top = 929.0
+offset_right = 1034.0
+offset_bottom = 969.0
+text = "Made by WUT ~~"
+
+[connection signal="pressed" from="GameMenuButtons/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="GameMenuButtons/QuitButton" to="." method="_on_quit_button_pressed"]
